@@ -77,4 +77,4 @@ jobs:
       with:
         name: partition-table.bin
         path: |
-          examples/get-started/hello_world/build/build/partition_table/partition-table.bin
+          examples/get-started/hello_world/build/partition_table/partition-table.bin
