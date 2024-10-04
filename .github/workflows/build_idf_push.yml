@@ -60,8 +60,6 @@ jobs:
         esp_idf_version: v5.3
         target: esp32c3
         path: 'examples/get-started/hello_world'
-    - name: Zip artifact for deployment
-        run: zip firmware.zip examples/get-started/hello_world/build/ -r
     - name: Download built firmware
       uses: actions/upload-artifact@v4
       with:
@@ -75,9 +73,8 @@ jobs:
         path: |
           examples/get-started/hello_world/build/bootloader/bootloader.bin
     - name: Download built firmware (partition-table)
-      uses: actions/upload-artifact@v4                                                                                                                                                                                                                            with:                                                                                                                                                                                                                                                         name: partition-table.bin                                                                                                                                                                                                                                   path: |                                                                                                                                                                                                                                                       examples/get-started/hello_world/build/partition_table/partition-table.bin
-      path: |
+      uses: actions/upload-artifact@v4 
+      with:
+        name: partition-table.bin
+        path: |
           examples/get-started/hello_world/build/build/partition_table/partition-table.bin
-    - name: Download built firmware (zip file)
-      uses: actions/upload-artifact@v4                                                                                                                                                                                                                     >      path: |
-          firmware.zip
